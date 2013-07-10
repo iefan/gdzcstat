@@ -1,0 +1,63 @@
+{% extends "gdzcbase.html" %}
+
+{% block title %}固定资产列表{% endblock %}
+
+{% block ordertable %}
+<br/>
+<div class="pure-u-1">
+  <form method="POST" action="." class="pure-form">
+    <div class='pure-u-1' align='center'>
+      <table align="center" class="pure-table  pure-table-horizontal " >
+        <tr >
+          <td ><label for="id_dateyear">年份:</label></td>
+          <td class="fieldWrapper" width="12%">{{ form.dateyear.errors }}{{ form.dateyear }}</td>
+          <td><label for="id_adminclass">归属科室:</label></td>
+          <td class="fieldWrapper" width="15%">{{ form.adminclass.errors }}{{ form.adminclass }}</td>
+          <td><label for="id_isuse">是否在用:</label></td>
+          <td class="fieldWrapper" width="10%">{{ form.isuse.errors }}{{ form.isuse }}</td>
+          <td><label for="id_adminpp">责任人:</label></td>
+          <td class="fieldWrapper" width="12%">{{ form.adminpp.errors }}{{ form.adminpp }}</td>
+          <td><button class="pure-button pure-button-primary" type="submit">查询</button></td>
+        </tr>
+
+        <!-- <tr> -->
+        <!--   <td><label for="id_demo">详细备注:</label></td> -->
+        <!--   <td class="fieldWrapper" width="40%">{{ form.demo.errors }}{{ form.demo }}</td> -->
+        <!-- </tr> -->
+      </table>
+
+    </div>
+  </form>
+</div>
+
+<div class="pure-u-1" align="center">
+  <h3>固定资产信息（{{ totalnums }}项）</h3>
+  <table align="center" class="pure-table  pure-table-bordered gameordertable">
+    <thead>
+      <tr>
+        {% for item in tablehead %}
+        <th>{{ item }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    {% for iteminfo in tableinfo %}
+    <tr>
+      {% for item in iteminfo %}
+      {% if forloop.last %}
+      <td><a href="/modify/{{ item }}">修改</a></td>
+      {% else %}
+      {% if not item %}
+      <td>&nbsp;</td>
+      {% else %}
+      <td>{{ item }}</td>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+<br/>
+
+{% endblock %}

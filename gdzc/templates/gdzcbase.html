@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block othercssjs %}
+<link rel="stylesheet" type="text/css" href="/static/JSCal2/css/jscal2.css" />
+<link rel="stylesheet" type="text/css" href="/static/JSCal2/css/border-radius.css" />
+<link rel="stylesheet" type="text/css" href="/static/JSCal2/css/gold/gold.css" />
+<script type="text/javascript" src="/static/JSCal2/js/jscal2.js"></script>
+<script type="text/javascript" src="/static/JSCal2/js/lang/cn.js"></script>
+{% endblock %}
+{% block content %}
+
+<div class="splash2 pure-u-1">
+  <div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+      {% block ordertable %}{% endblock %}
+      <script>
+        Calendar.setup({
+        trigger    : "id_startdate",
+        inputField : "id_startdate",
+        min: {{ jscal_min }},
+        max: {{ jscal_max }}
+        });
+      </script>
+
+    </div>
+    <!-- <div class="pure-u-1-2"> -->
+    <!--   {% block orderdate %}{% endblock %} -->
+    <!-- </div> -->
+  </div>
+</div>
+
+{% endblock %}

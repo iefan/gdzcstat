@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>汕头残联固定资产登记—{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/mycss/my.css" />
+    <link rel="stylesheet" type="text/css" href="/static/mycss/marketing.css" />
+    <link rel="stylesheet" type="text/css" href="/static/mycss/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/static/mycss/pure-min.css" />
+
+    {% block othercssjs %}{% endblock %}
+
+  </head>
+
+  <body>
+    <div class="header pure-u-1 gamenav">
+      <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+        <!-- <a class="pure-menu-heading" href="">站点展示</a> -->
+
+        <ul>
+          <li class="pure-menu-selected gamenav"><a href="/">固定资产</a></li>
+          <!-- <li class="gamenav"><a href="/select/">查询</a></li> -->
+          <li class="gamenav"><a href="/about/">关于</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <br/><br/> -->
+    {% block content %}{% endblock %}
+
+    <div class="footer pure-u-1">
+      Copyright &copy; 2013 &nbsp;  汕头残联
+    </div>
+  </body>
+</html>

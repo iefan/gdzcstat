@@ -1,0 +1,65 @@
+#modifydemo{
+    height:300px;
+}
+#modifydemo textarea {
+    height:300px;
+}
+.gamenav {
+    font-size: 20px;
+    font-family: ËÎÌו,Arial,Helvetica,sans-serif;
+  	font-weight:bold;
+}
+.gameordertable{
+    border:0;
+  	font-size: 90%;
+}
+
+/* Apply the .box class on the immediate parent of any grid element (pure-u-*) to apply some padding. */
+.l-box {
+    padding: 1.3em;
+}
+
+.l-vbox {
+    padding: 1.3em 0;
+}
+
+.l-hbox {
+    padding: 0 1.3em;
+}
+
+.l-centered {
+    text-align: center;
+}
+/* set orderahead page */
+.splash2{
+    margin: 1em auto 0;
+    padding: 3em 0.5em;
+    background: #eee;
+}
+.splash3{
+    margin: 1em auto 0;
+    padding: 3em 0.5em;
+    background: #eee;
+}
+.splash2 table {
+    width:70%;
+}
+.splash2  input[type="text"]{
+	width: 100%;
+}
+.splash2 select {
+	width: 100%;
+}
+.splash2 textarea{
+	width: 100%;
+    height:80px;
+}
+.splash2 h1{
+    text-aligh:center;
+}
+.errorlist{
+    font-size:10px;
+    color:red;
+    margin:0;
+    padding:0;
+}

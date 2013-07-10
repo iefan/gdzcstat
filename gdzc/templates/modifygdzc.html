@@ -1,0 +1,44 @@
+{% extends "gdzcbase.html" %}
+
+{% block title %}固定资产修改{% endblock %}
+
+{% block ordertable %}
+<br/>
+<div class="pure-u-1">
+  <form method="POST" action="." class="pure-form">
+    <div class='pure-u-1' align='center'>
+      <table align="center" class="pure-table  pure-table-bordered gameordertable">
+        <tr >
+          <td >编号：{{ curgdzc.id }}</td>
+          <td >名字：{{ curgdzc.name }}</td>
+          <td >型号：{{ curgdzc.modeltype }}</td>
+          <td >类别：{{ curgdzc.modelclass }}</td>
+          <td >数量：{{ curgdzc.nums }}</td>
+          <td >日期：{{ curgdzc.buydate.isoformat }}</td>
+          <td >价格：{{ curgdzc.prices }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_adminclass">归属科室:</label></td>
+          <td class="fieldWrapper" width="20%">{{ form.adminclass.errors }}{{ form.adminclass }}</td>
+          <td><label for="id_isuse">是否在用:</label></td>
+          <td class="fieldWrapper" width="18%">{{ form.isuse.errors }}{{ form.isuse }}</td>
+          <td><label for="id_adminpp">责任人:</label></td>
+          <td class="fieldWrapper" colspan="2" width="30%">{{ form.adminpp.errors }}{{ form.adminpp }}</td>
+        </tr>
+        <tr>
+          <td><label for="id_demo">详细备注:</label></td>
+          <td class="fieldWrapper" id="modifydemo" colspan="6">{{ form.demo.errors }}{{ form.demo }}</td>
+        </tr>
+        <tr>
+          <td colspan="7" align="center"><button class="pure-button pure-button-primary" type="submit">修改</button></td>
+        </tr>
+      </table>
+    </div>
+    <input type="hidden" name="curid" value="{{ curgdzc.id }}">
+  </form>
+</div>
+
+
+<br/>
+
+{% endblock %}
