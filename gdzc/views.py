@@ -21,6 +21,7 @@ def modify(request, curid='1'):
         result.isuse       = request.POST['isuse']
         result.demo        = request.POST['demo']
         result.save()
+        request.session['adminclass'] = request.POST['adminclass']
         return HttpResponseRedirect('/select/') # Redirect
 
     if len(result) != 0:
@@ -46,8 +47,13 @@ def select(request):
         else:
             result = gdzcinfoModel.objects.filter(adminclass__contains=adminclass, adminpp__contains=adminpp, isuse__contains=isuse)
     else:
+        adminclass = ""
+        if 'adminclass' in request.session:
+            adminclass = request.session['adminclass']
+            request.session['adminclass'] = ""
+
         form = gdzcForm()
-        result = gdzcinfoModel.objects.all()
+        result = gdzcinfoModel.objects.filter(adminclass__contains=adminclass)
 
     tableinfo = []
     indx = 0

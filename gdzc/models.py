@@ -15,5 +15,8 @@ class gdzcinfoModel(models.Model):
     demo        = models.TextField(null=True, blank=True, verbose_name="详细备注")
     isuse       = models.CharField(null=True, blank=True, max_length=10, verbose_name="是否在用")
 
+    class Meta():
+        ordering = ['id']
+
     def __unicode__(self):
-        return u"%s　%s　%s　%s　%s　%s　%s　%s %s" % (self.name, self.modeltype, self.modelclass, self.nums, self.prices, self.buydate, self.adminclass, self.adminpp, self.isuse)
+        return u"%s %s %s　%s　%s　%s　%s　%s　%s %s" % (self.id, self.name, self.modeltype, self.modelclass, self.nums, self.prices, self.buydate, self.adminclass, self.adminpp, self.isuse)
